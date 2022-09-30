@@ -1,0 +1,77 @@
+
+/* Main Colors */
+:root {
+    --main-bgColor : #eff5fe;
+    --whiteColor : #ffffff;
+    --borderColor : #0288d147;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--main-bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-container {
+    background-color: var(--whiteColor);
+    border-radius: 25px;
+    box-shadow: 0 20px 20px #0000002e;
+    
+}
+
+.drop-zone {
+    border: 2px dashed var(--borderColor);
+    width: 500px;
+    min-height: 300px;
+    margin: 45px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon-container {
+    /* border: 1px solid red; */
+    width: 75px;
+    height: 100px;
+    position: relative;
+}
+
+.icon-container img {
+    width: 75px;
+    position: absolute;
+    transition: transform 250ms ease-in-out;
+}
+
+.center {
+    z-index: 2;
+    transform: translateY(-5px);
+}
+
+.dragged .right {
+    transform: rotate(10deg) translateX(20px) scale(.9);
+    transform-origin: bottom;
+}
+
+.dragged .left {
+    transform: rotate(-10deg) translateX(-20px) scale(.9);
+    transform-origin: bottom;
+}
+
+.left,.right {
+    filter: grayscale(.5);
+    transform: scale(.9);
+}
