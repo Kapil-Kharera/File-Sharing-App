@@ -3,7 +3,8 @@
 :root {
     --main-bgColor : #eff5fe;
     --whiteColor : #ffffff;
-    --borderColor : #0288d147;
+    --borderColorPrimary : #0288d147;
+    --borderColorSecondary : #2196f3;
 }
 
 
@@ -32,7 +33,7 @@ body {
 }
 
 .drop-zone {
-    border: 2px dashed var(--borderColor);
+    border: 2px dashed var(--borderColorPrimary);
     width: 500px;
     min-height: 300px;
     margin: 45px;
@@ -41,6 +42,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all .2s ease;
+}
+
+/* don't understand why it not giving space in selectors */
+.dragged.drop-zone {
+    background-color: var(--main-bgColor);
+    border-color: var(--borderColorSecondary);
 }
 
 .icon-container {
@@ -58,7 +66,7 @@ body {
 
 .center {
     z-index: 2;
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* this is not working as of now */
 }
 
 .dragged .right {
@@ -74,4 +82,13 @@ body {
 .left,.right {
     filter: grayscale(.5);
     transform: scale(.9);
+}
+
+.file-input {
+    display: none;
+}
+
+.browse-btn {
+    color: var(--borderColorSecondary);
+    cursor: pointer;
 }
