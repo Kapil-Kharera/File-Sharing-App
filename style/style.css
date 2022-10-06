@@ -5,6 +5,8 @@
     --whiteColor : #ffffff;
     --borderColorPrimary : #0288d147;
     --borderColorSecondary : #2196f3;
+
+    --container-width : 500px;
 }
 
 
@@ -23,19 +25,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .upload-container {
     background-color: var(--whiteColor);
     border-radius: 25px;
     box-shadow: 0 20px 20px #0000002e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
 .drop-zone {
     border: 2px dashed var(--borderColorPrimary);
-    width: 500px;
-    min-height: 300px;
+    width: var(--container-width);
+    min-height: 200px;
     margin: 45px;
     border-radius: 15px;
     display: flex;
@@ -92,3 +99,225 @@ body {
     color: var(--borderColorSecondary);
     cursor: pointer;
 }
+
+/* css for progress  */
+.progress-container {
+    width: var(--container-width);
+    height: 70px;
+    border: 2px solid var(--main-bgColor);
+    margin-bottom: 25px;
+    border-radius: 10px;
+    position: relative;
+    display: none;
+}
+
+.bg-progress {
+    position: absolute;
+    background-color: var(--main-bgColor);
+    width: 0%;
+    height: 100%;
+    border-radius: 2%;
+    /* transform: scaleX(0); */
+    /* transform-origin: left; */
+    transition: width .2s linear;
+}
+
+.inner-container {
+    margin: 10px 15px;
+    width: calc(100% - 30px);
+    position: absolute;
+    z-index: 1;
+}
+
+.percent-container {
+    font-size: 12px;
+    margin: 5px;
+    opacity: .8;
+}
+
+.progress-bar {
+    height: 2px;
+    width: 100%;
+    background-color: #03a9f4;
+    border-radius: 2px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .2s linear;
+}
+
+
+/* css for share container */
+
+.sharing-container {
+    width: var(--container-width);
+    margin-bottom: 10px;
+    display: none;
+}
+
+p  {
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container input{
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px dashed var(--borderColorPrimary);
+    border-radius: 6px;
+    font-size: 20px;
+    background-color: #f5fcff;
+    color: #0000008c;
+    box-sizing: border-box;
+}
+
+.input-container img {
+    position: absolute;
+    height: 22px;
+    width: 30px;
+    right: 7px;
+    top: 12px;
+    background-color: #f7fdff;
+    cursor: pointer;
+}
+
+
+/* form css */
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 10px 0px;
+}
+
+.email-container form {
+    width: 100%;
+    border: 2px solid var(--borderColorPrimary);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.field {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.email-container label {
+    font-size: 18px;
+}
+
+.email-container input {
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid var(--borderColorPrimary);
+    text-align: center;
+}
+
+.email-container input:focus {
+    outline: none;
+}
+
+.email-container button {
+    font-size: 18px;
+    padding: 8px 40px;
+    margin-top: 15px;
+    background-color: var(--main-bgColor);
+    border: none;
+    border-radius: 5px;
+    color: #607d8b;
+    cursor: pointer;
+}
+
+/* alert */
+.toast {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 60px);
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #03a9f4;
+    color: #ffffff ;
+    font-size: 18px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),
+    0px 4px 6px -2px rgba(0,0,0,0.5);
+}
+
+
+/* background IMage */
+.image-vector {
+    background : url("../assests/undraw-upload.svg") no-repeat center;
+    background-size: contain;
+    width: 50vw;
+    height: 50vh;
+    /* border: 5px solid red; */
+}
+
+
+/* Media Query */
+@media (max-width: 900px) {
+    * {
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+        /* border: none; */
+    }
+
+    :root {
+        --container-width : 300px;
+    }
+
+    .image-vector {
+        display: none;
+    }
+
+    .field {
+        flex-direction: column;
+        /* border: none; */
+        width: 300px;
+        margin-bottom: 15px;
+        padding: 0px 15px ;
+    }
+
+    .field label {
+        margin-bottom: 6px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

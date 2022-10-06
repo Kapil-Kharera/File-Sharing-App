@@ -19,7 +19,45 @@
             <input type="file" class="file-input">
             <div class="tittle">Drop your files here or,<span class="browse-btn">browse</span></div>
         </div>
+
+        <!-- Progress container -->
+        <div class="progress-container">
+            <div class="bg-progress"></div>
+            <div class="inner-container">
+                <div class="title">Uploading...</div>
+                <div class="percent-container"><span class="percent">0</span>%</div>
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="sharing-container">
+            <p class="expire">Link expires in 24 hrs</p>
+            <div class="input-container">
+                <input type="text" id="fileURL" readonly>
+                <img src="./assests/copy-icon.svg" alt="copy-icon" id="copy-btn">
+            </div>
+            <div class="email-container">
+                <p>Or Send Via Email</p>
+                <div class="email-container">
+                    <form id="emailForm">
+                        <div class="field">
+                            <label for="sender">Your email</label>
+                            <input type="email" required name="from-email" id="sender">
+                        </div>
+                        <div class="field">
+                            <label for="receiver">Receiver email</label>
+                            <input type="email" required name="to-email" id="receiver">
+                        </div>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
+    <div class="image-vector">
+        <!-- <img src="./assests/undraw-upload.svg" alt=""> -->
+    </div>
+    <div class="toast">baba</div>
 
     <!-- Script File Links -->
     <script src="./script/script.js"></script>
